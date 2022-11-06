@@ -27,7 +27,7 @@ create table historia (
     nome varchar(100) not null,
     dt_publicacao date not null,
     dt_atualizacao date,
-    sinopse varchar(300) not null,
+    sinopse varchar(1000) not null,
 
     primary key (id)
 );
