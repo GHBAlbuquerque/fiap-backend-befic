@@ -34,7 +34,7 @@ public class Usuario {
     @Column(nullable = false)
     private String email;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private GeneroEnum genero;
 
