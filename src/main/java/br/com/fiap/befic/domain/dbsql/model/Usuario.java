@@ -1,6 +1,6 @@
-package br.com.fiap.befic.domain.model;
+package br.com.fiap.befic.domain.dbsql.model;
 
-import br.com.fiap.befic.domain.model.enums.GeneroEnum;
+import br.com.fiap.befic.domain.dbsql.model.enums.GeneroEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

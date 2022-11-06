@@ -1,4 +1,4 @@
-package br.com.fiap.befic.domain.model.enums;
+package br.com.fiap.befic.domain.dbsql.model.enums;
 
 public enum GeneroEnum {
 

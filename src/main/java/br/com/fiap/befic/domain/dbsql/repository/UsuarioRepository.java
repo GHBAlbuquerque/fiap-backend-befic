@@ -1,6 +1,6 @@
-package br.com.fiap.befic.domain.repository;
+package br.com.fiap.befic.domain.dbsql.repository;
 
-import br.com.fiap.befic.domain.model.Usuario;
+import br.com.fiap.befic.domain.dbsql.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

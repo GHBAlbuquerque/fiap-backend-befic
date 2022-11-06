@@ -1,4 +1,4 @@
-package br.com.fiap.befic.domain.model;
+package br.com.fiap.befic.domain.dbsql.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

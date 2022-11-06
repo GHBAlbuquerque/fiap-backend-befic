@@ -1,6 +1,6 @@
 package br.com.fiap.befic.api.controller;
 
-import br.com.fiap.befic.domain.model.Login;
+import br.com.fiap.befic.domain.dbsql.model.Login;
 import br.com.fiap.befic.domain.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
