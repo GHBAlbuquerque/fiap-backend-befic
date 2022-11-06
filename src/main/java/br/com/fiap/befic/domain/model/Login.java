@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -28,4 +30,8 @@ public class Login {
 
     @Column(nullable = false)
     private String senha;
+
+    @CreationTimestamp
+    @Column(nullable = false)
+    private LocalDate dtCadastro;
 }

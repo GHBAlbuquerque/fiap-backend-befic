@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -27,9 +29,11 @@ public class Capitulo {
     @Column(nullable = false)
     private String titulo;
 
+    @CreationTimestamp
     @Column(nullable = false)
     private LocalDate dt_publicacao;
 
+    @UpdateTimestamp
     @Column(nullable = false)
     private LocalDate dt_atualizacao;
 

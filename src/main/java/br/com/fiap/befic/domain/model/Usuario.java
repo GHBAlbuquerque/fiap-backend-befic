@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -25,7 +26,7 @@ public class Usuario {
     private String nome; //TODO: ADICIONAR NO FORM
 
     @Column(nullable = false)
-    private LocalDate dt_nasc; //TODO: ADICIONAR NO FORM
+    private LocalDate dtNasc; //TODO: ADICIONAR NO FORM
 
     @Column(nullable = false)
     private String celular;
@@ -39,6 +40,10 @@ public class Usuario {
 
     @Column(nullable = false)
     private String perfil;
+
+    @CreationTimestamp
+    @Column(nullable = false)
+    private LocalDate dtCadastro;
 
 }
 
