@@ -5,17 +5,15 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import javax.persistence.Id;
-
 @Data
 @AllArgsConstructor
-@Document("followingitems")
-public class FollowingItem {
+@Document("followers")
+public class Follower {
 
     @MongoId
-    private Long id;
+    private String id;
     private Long userId;
-    private Long followingId;
-    private String followingUsername;
+    private Long followerId;
+    private String followerUsername;
 
 }

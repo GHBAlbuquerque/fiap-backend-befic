@@ -1,11 +1,14 @@
 package br.com.fiap.befic.domain.dbnosql.repository;
 
-import br.com.fiap.befic.domain.dbnosql.model.FollowerItem;
+import br.com.fiap.befic.domain.dbnosql.model.Follower;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface FollowerRepository extends MongoRepository<FollowerItem, Long> {
+import java.util.List;
 
-    FollowerItem userId(Long userId);
+@Repository
+public interface FollowerRepository extends MongoRepository<Follower, Long> {
+
+    List<Follower> findAllByUserId(Long userId);
+
 }
