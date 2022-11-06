@@ -1,4 +1,4 @@
-package br.com.fiap.befic.domain.dbnosql.model;
+package br.com.fiap.befic.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,13 +7,13 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Data
 @AllArgsConstructor
-@Document("following")
-public class Following {
+@Document("followers")
+public class Seguidor {
 
     @MongoId
     private String id;
     private Long userId;
-    private Long followingId;
-    private String followingUsername;
+    private Long followerId;
+    private String followerUsername;
 
 }

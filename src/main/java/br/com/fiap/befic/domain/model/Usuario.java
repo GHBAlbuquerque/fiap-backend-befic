@@ -1,11 +1,11 @@
-package br.com.fiap.befic.domain.dbsql.model;
+package br.com.fiap.befic.domain.model;
 
+import br.com.fiap.befic.domain.model.enums.GeneroEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -15,35 +15,35 @@ import java.time.LocalDate;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Capitulo {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long numero;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Historia historia;
+    private Long id;
 
     @Column(nullable = false)
-    private String titulo;
+    private String nome; //TODO: ADICIONAR NO FORM
+
+    @Column(nullable = false)
+    private LocalDate dtNasc; //TODO: ADICIONAR NO FORM
+
+    @Column(nullable = false)
+    private String celular;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private GeneroEnum genero;
+
+    @Column(nullable = false)
+    private String perfil;
 
     @CreationTimestamp
     @Column(nullable = false)
-    private LocalDate dt_publicacao;
-
-    @UpdateTimestamp
-    @Column(nullable = false)
-    private LocalDate dt_atualizacao;
-
-    @Column(nullable = false)
-    private String conteudo;
-
-    @Column(nullable = false)
-    private String notasIniciais;
-
-    @Column(nullable = false)
-    private String notasFinais;
+    private LocalDate dtCadastro;
 
 }
+

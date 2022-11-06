@@ -1,8 +1,8 @@
 package br.com.fiap.befic.domain.service;
 
 import br.com.fiap.befic.domain.exception.BusinessException;
-import br.com.fiap.befic.domain.dbsql.model.Capitulo;
-import br.com.fiap.befic.domain.dbsql.repository.CapituloRepository;
+import br.com.fiap.befic.domain.model.Capitulo;
+import br.com.fiap.befic.domain.repository.CapituloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

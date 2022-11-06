@@ -1,6 +1,6 @@
 package br.com.fiap.befic.api.controller;
 
-import br.com.fiap.befic.domain.dbsql.model.Historia;
+import br.com.fiap.befic.domain.model.Historia;
 import br.com.fiap.befic.domain.service.HistoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

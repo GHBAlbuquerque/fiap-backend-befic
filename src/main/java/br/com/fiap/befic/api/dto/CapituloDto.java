@@ -1,6 +1,6 @@
 package br.com.fiap.befic.api.dto;
 
-import br.com.fiap.befic.domain.dbsql.model.Historia;
+import br.com.fiap.befic.domain.model.Historia;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

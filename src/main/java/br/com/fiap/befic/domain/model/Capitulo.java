@@ -1,10 +1,11 @@
-package br.com.fiap.befic.domain.dbsql.model;
+package br.com.fiap.befic.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,24 +15,35 @@ import java.time.LocalDate;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Login {
+public class Capitulo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long id;
+    private Long numero;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(nullable = false)
-    private Usuario usuario;
+    private Historia historia;
 
     @Column(nullable = false)
-    private String username;
-
-    @Column(nullable = false)
-    private String senha;
+    private String titulo;
 
     @CreationTimestamp
     @Column(nullable = false)
-    private LocalDate dtCadastro;
+    private LocalDate dt_publicacao;
+
+    @UpdateTimestamp
+    @Column(nullable = false)
+    private LocalDate dt_atualizacao;
+
+    @Column(nullable = false)
+    private String conteudo;
+
+    @Column(nullable = false)
+    private String notasIniciais;
+
+    @Column(nullable = false)
+    private String notasFinais;
+
 }

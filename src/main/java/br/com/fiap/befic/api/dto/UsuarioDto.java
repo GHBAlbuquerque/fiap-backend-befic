@@ -1,6 +1,6 @@
 package br.com.fiap.befic.api.dto;
 
-import br.com.fiap.befic.domain.dbsql.model.enums.GeneroEnum;
+import br.com.fiap.befic.domain.model.enums.GeneroEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
