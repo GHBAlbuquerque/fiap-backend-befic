@@ -44,7 +44,7 @@ VALUES (
 
 -- login
 
-INSERT INTO `db-befic`.login (`usuario`, `username`, `senha`, `dt_cadastro`)
+INSERT INTO `db-befic`.login (`usuario_id`, `username`, `senha`, `dt_cadastro`)
 VALUES (
 2,
 'dai-san',
@@ -52,7 +52,7 @@ VALUES (
 '2018-06-07'
 );
 
-INSERT INTO `db-befic`.login (`usuario`, `username`, `senha`, `dt_cadastro`)
+INSERT INTO `db-befic`.login (`usuario_id`, `username`, `senha`, `dt_cadastro`)
 VALUES (
 3,
 'tannor_1',
@@ -60,7 +60,7 @@ VALUES (
 '2020-07-07'
 );
 
-INSERT INTO `db-befic`.login (`usuario`, `username`, `senha`, `dt_cadastro`)
+INSERT INTO `db-befic`.login (`usuario_id`, `username`, `senha`, `dt_cadastro`)
 VALUES (
 4,
 'yasescreve',
@@ -68,7 +68,7 @@ VALUES (
 '2022-06-07'
 );
 
-INSERT INTO `db-befic`.login (`usuario`, `username`, `senha`, `dt_cadastro`)
+INSERT INTO `db-befic`.login (`usuario_id`, `username`, `senha`, `dt_cadastro`)
 VALUES (
 5,
 'doffy',
@@ -79,31 +79,31 @@ VALUES (
 
 -- historias
 
-INSERT INTO `db-befic`.historia (`autor`, `nome`, `dt_publicacao`, `sinopse`)
+INSERT INTO `db-befic`.historia (`autor_id`, `nome`, `dt_publicacao`, `sinopse`)
 VALUES (
 2,
 'Formigamento',
 '2022-06-01',
 'Hinata Hyuuga odiava formigamentos, mas Sasuke Uchiha estava transformando a sensação em algo interessante.');
-INSERT INTO `db-befic`.historia (`autor`, `nome`, `dt_publicacao`, `sinopse`)
+INSERT INTO `db-befic`.historia (`autor_id`, `nome`, `dt_publicacao`, `sinopse`)
 VALUES (
 2,
 'Gratidão',
 '2022-06-01',
 'Por muitos anos o terceiro dia de Julho fora incomodo. Neji havia forçado irrelevância, mas a verdade era que a data sempre esfregara em sua cara o quanto ele era solitário mesmo não estando realmente sozinho, mas hoje tudo o que ele sentia era gratidão.');
-INSERT INTO `db-befic`.historia (`autor`, `nome`, `dt_publicacao`, `sinopse`)
+INSERT INTO `db-befic`.historia (`autor_id`, `nome`, `dt_publicacao`, `sinopse`)
 VALUES (
 3,
 'Amarrado',
 '2022-06-01',
 'Kiba Inuzuka estava amarrado (amarradão mesmo!) em Sakura Haruno, mas ele não iria assumir isso em voz alta.');
-INSERT INTO `db-befic`.historia (`autor`, `nome`, `dt_publicacao`, `sinopse`)
+INSERT INTO `db-befic`.historia (`autor_id`, `nome`, `dt_publicacao`, `sinopse`)
 VALUES (
 3,
 'O Selo do Tempo',
 '2022-06-01',
 'Após perder Neji na Quarta Guerra Mundial Ninja, Hinata se recusa a seguir em frente. Decidida a encontrar um meio de trazê-lo de volta à vida, ela parte de Konoha em busca de informações para conseguir tal façanha. Só que mesmo com anos de preparação, as coisas podem não ocorrer como a Hyuuga imagina.');
-INSERT INTO `db-befic`.historia (`autor`, `nome`, `dt_publicacao`, `sinopse`)
+INSERT INTO `db-befic`.historia (`autor_id`, `nome`, `dt_publicacao`, `sinopse`)
 VALUES (
 5,
 'Beijos na calçada',
@@ -114,7 +114,7 @@ VALUES (
 
 -- capitulos
 
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 2,
 'Capítulo Único',
@@ -123,7 +123,7 @@ VALUES (
 'Nada a declarar',
 'Espero que gostem!'
 );
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 3,
 'Capítulo Único',
@@ -132,7 +132,7 @@ VALUES (
 'Começando de novo...',
 'Demorei demais para postar né?'
 );
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 4,
 'Capítulo Único',
@@ -141,7 +141,7 @@ VALUES (
 'Mais uma história quentinha!',
 'Deixem comentários <3'
 );
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 4,
 'Capítulo Único',
@@ -150,7 +150,7 @@ VALUES (
 'Olá pessoa, estou tentando começar novamente.. espero que curtam.',
 'obrigadaaaa'
 );
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 5,
 'Capítulo Único',
@@ -159,7 +159,7 @@ VALUES (
 'Testando novas formas de escrita',
 'Valeeeeu!'
 );
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 5,
 'Capítulo Único',
@@ -168,7 +168,7 @@ VALUES (
 'XoXo',
 'XoXo'
 );
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 2,
 'Capítulo Único',

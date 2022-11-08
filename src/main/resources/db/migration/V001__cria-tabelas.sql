@@ -13,7 +13,7 @@ create table usuario (
 
 create table login (
 	id int not null auto_increment,
-    usuario int not null,
+    usuario_id int not null,
     username varchar(100) not null,
     senha varchar(100) not null,
     dt_cadastro date not null,
@@ -23,7 +23,7 @@ create table login (
 
 create table historia (
 	id int not null auto_increment,
-    autor int not null,
+    autor_id int not null,
     nome varchar(100) not null,
     dt_publicacao date not null,
     dt_atualizacao date,
@@ -34,7 +34,7 @@ create table historia (
 
 create table capitulo (
 	numero int not null auto_increment,
-    historia int not null,
+    historia_id int not null,
     titulo varchar(100) not null,
     dt_publicacao date not null,
     dt_atualizacao date,

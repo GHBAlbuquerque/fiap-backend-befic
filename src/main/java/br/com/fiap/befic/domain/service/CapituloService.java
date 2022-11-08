@@ -2,6 +2,7 @@ package br.com.fiap.befic.domain.service;
 
 import br.com.fiap.befic.domain.exception.BusinessException;
 import br.com.fiap.befic.domain.model.Capitulo;
+import br.com.fiap.befic.domain.model.Historia;
 import br.com.fiap.befic.domain.repository.CapituloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,14 @@ public class CapituloService {
     public Capitulo findById(Long id) {
         return capituloRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Capitulo não encontrado"));
+    }
+
+    public List<Capitulo> findByHistoria(Historia historia) {
+        var capitulos = capituloRepository.findByHistoria(historia);
+
+        if (capitulos.isEmpty()) throw new BusinessException("Capitulo não encontrado");
+
+        return capitulos;
     }
 
 

@@ -11,4 +11,6 @@ public interface HistoriaRepository extends JpaRepository<Historia, Long> {
     public List<Historia> findByNomeContaining(String nome);
 
     public List<Historia> findByNomeAndAutor(String nome, Usuario autor);
+
+    public List<Historia> findByAutor(Usuario autor);
 }

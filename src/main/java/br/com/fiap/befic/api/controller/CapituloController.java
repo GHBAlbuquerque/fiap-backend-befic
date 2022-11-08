@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/capitulo")
+@RequestMapping("/capitulos")
 public class CapituloController {
 
     @Autowired

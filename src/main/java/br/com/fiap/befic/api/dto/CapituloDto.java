@@ -14,7 +14,7 @@ public class CapituloDto {
 
     private Long numero;
 
-    private Historia historia;
+    private Long historia;
 
     private String titulo;
 

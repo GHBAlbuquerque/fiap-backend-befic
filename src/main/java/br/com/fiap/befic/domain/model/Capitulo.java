@@ -31,11 +31,11 @@ public class Capitulo {
 
     @CreationTimestamp
     @Column(nullable = false)
-    private LocalDate dt_publicacao;
+    private LocalDate dtPublicacao;
 
     @UpdateTimestamp
     @Column(nullable = false)
-    private LocalDate dt_atualizacao;
+    private LocalDate dtAtualizacao;
 
     @Column(nullable = false)
     private String conteudo;

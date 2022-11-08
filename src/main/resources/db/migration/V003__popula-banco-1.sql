@@ -9,7 +9,7 @@ VALUES (
 '2021-01-01'
 );
 
-INSERT INTO `db-befic`.login (`usuario`, `username`, `senha`, `dt_cadastro`)
+INSERT INTO `db-befic`.login (`usuario_id`, `username`, `senha`, `dt_cadastro`)
 VALUES (
 1,
 'nejihinax',
@@ -17,14 +17,14 @@ VALUES (
 '2021-01-01'
 );
 
-INSERT INTO `db-befic`.historia (`autor`, `nome`, `dt_publicacao`, `sinopse`)
+INSERT INTO `db-befic`.historia (`autor_id`, `nome`, `dt_publicacao`, `sinopse`)
 VALUES (
 1,
 'Sobre Defeitos',
 '2022-06-01',
 'O defeito da vida é ter reviravoltas demais (mas ainda bem que tem).');
 
-INSERT INTO `db-befic`.capitulo (`historia`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
 1,
 'Capítulo Único',
