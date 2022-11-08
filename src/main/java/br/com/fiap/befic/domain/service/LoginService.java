@@ -2,6 +2,7 @@ package br.com.fiap.befic.domain.service;
 
 import br.com.fiap.befic.domain.exception.BusinessException;
 import br.com.fiap.befic.domain.model.Login;
+import br.com.fiap.befic.domain.model.Usuario;
 import br.com.fiap.befic.domain.repository.LoginRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +21,14 @@ public class LoginService {
         return loginRepository.findAll();
     }
 
-    public Login findById(Long id) {
-        return loginRepository.findById(id)
-                .orElseThrow(() -> new BusinessException("Login não encontrado"));
+    public Login findByUsuario(Usuario usuario) {
+        var result = loginRepository.findByUsuario(usuario);
+
+        if (result.isEmpty()) throw new BusinessException("Login não encontrado");
+        if (result.size() > 1)
+            throw new BusinessException("Mais de um login encontrado. Contate o administrador do sistema");
+
+        return result.get(0);
     }
 
     @Transactional

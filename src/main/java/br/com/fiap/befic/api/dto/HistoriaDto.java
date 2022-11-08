@@ -1,6 +1,5 @@
 package br.com.fiap.befic.api.dto;
 
-import br.com.fiap.befic.domain.model.Usuario;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -13,7 +12,7 @@ import java.time.LocalDate;
 public class HistoriaDto {
     private Long id;
 
-    private Usuario autor;
+    private Long autor;
 
     private String nome;
 

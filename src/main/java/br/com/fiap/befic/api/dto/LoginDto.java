@@ -12,7 +12,7 @@ public class LoginDto {
 
     private Long id;
 
-    private Usuario usuario;
+    private Long usuario;
 
     private String username;
 

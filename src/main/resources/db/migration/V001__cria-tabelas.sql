@@ -13,7 +13,7 @@ create table usuario (
 
 create table login (
 	id int not null auto_increment,
-    usuario_id int not null,
+    usuario_id int not null unique,
     username varchar(100) not null,
     senha varchar(100) not null,
     dt_cadastro date not null,

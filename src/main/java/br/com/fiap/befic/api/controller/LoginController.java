@@ -1,6 +1,7 @@
 package br.com.fiap.befic.api.controller;
 
 import br.com.fiap.befic.domain.model.Login;
+import br.com.fiap.befic.domain.model.Usuario;
 import br.com.fiap.befic.domain.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,9 +23,11 @@ public class LoginController {
         return loginService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Login> findById(@PathVariable Long id) {
-        var login = loginService.findById(id);
+    @GetMapping("/{userId}")
+    public ResponseEntity<Login> findByUsuario(@PathVariable Long userId) {
+        var usuario = new Usuario();
+        usuario.setId(userId);
+        var login = loginService.findByUsuario(usuario);
 
         return ResponseEntity.ok(login);
     }
