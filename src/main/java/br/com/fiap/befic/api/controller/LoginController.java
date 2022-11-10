@@ -1,5 +1,6 @@
 package br.com.fiap.befic.api.controller;
 
+import br.com.fiap.befic.api.dto.LoginDto;
 import br.com.fiap.befic.domain.model.Login;
 import br.com.fiap.befic.domain.model.Usuario;
 import br.com.fiap.befic.domain.service.LoginService;
@@ -18,9 +19,16 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping
+    @GetMapping()
     public List<Login> list() {
         return loginService.findAll();
+    }
+
+    @PostMapping("/entrar")
+    public ResponseEntity<Login> findByUsernameESenha(@RequestBody LoginDto loginDto) {
+        var login = loginService.findByUsernameESenha(loginDto.getUsername(), loginDto.getSenha());
+
+        return ResponseEntity.ok(login);
     }
 
     @GetMapping("/{userId}")
@@ -31,6 +39,7 @@ public class LoginController {
 
         return ResponseEntity.ok(login);
     }
+
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

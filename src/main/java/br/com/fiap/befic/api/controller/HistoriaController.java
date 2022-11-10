@@ -46,10 +46,8 @@ public class HistoriaController {
 
     @GetMapping("/{id}/capitulos")
     public ResponseEntity<List<Capitulo>> getCapitulos(@PathVariable Long id) {
-        var historia = new Historia();
-        historia.setId(id);
 
-        var capitulos = capituloService.findByHistoria(historia);
+        var capitulos = capituloService.findByHistoria(id);
 
         return ResponseEntity.ok(capitulos);
     }

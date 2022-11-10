@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
@@ -15,16 +16,17 @@ import java.time.LocalDate;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Capitulo {
+@IdClass(CapituloId.class)
+public class Capitulo implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @EqualsAndHashCode.Include
     private Long numero;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Historia historia;
+    @Id
+    @EqualsAndHashCode.Include
+    private Long historiaId;
 
     @Column(nullable = false)
     private String titulo;

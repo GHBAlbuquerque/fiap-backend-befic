@@ -1,6 +1,5 @@
 package br.com.fiap.befic.api.dto;
 
-import br.com.fiap.befic.domain.model.Usuario;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -9,10 +8,6 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 public class LoginDto {
-
-    private Long id;
-
-    private Long usuario;
 
     private String username;
 

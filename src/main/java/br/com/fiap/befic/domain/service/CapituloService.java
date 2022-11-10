@@ -26,8 +26,9 @@ public class CapituloService {
                 .orElseThrow(() -> new BusinessException("Capitulo não encontrado"));
     }
 
-    public List<Capitulo> findByHistoria(Historia historia) {
-        var capitulos = capituloRepository.findByHistoria(historia);
+    public List<Capitulo> findByHistoria(Long historiaId) {
+
+        var capitulos = capituloRepository.findByHistoriaId(historiaId);
 
         if (capitulos.isEmpty()) throw new BusinessException("Capitulo não encontrado");
 

@@ -22,6 +22,7 @@ public class CapituloController {
         return capituloService.findAll();
     }
 
+    //TODO: REVER
     @GetMapping("/{id}")
     public ResponseEntity<Capitulo> findById(@PathVariable Long id) {
         var capitulo = capituloService.findById(id);

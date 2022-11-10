@@ -21,6 +21,15 @@ public class LoginService {
         return loginRepository.findAll();
     }
 
+    public Login findByUsernameESenha(String username, String senha) {
+        var result = loginRepository.findByUsernameAndSenha(username, senha);
+        if (result.isEmpty()) throw new BusinessException("Login incorreto. Verifique usuário e senha.");
+        if (result.size() > 1)
+            throw new BusinessException("Mais de um login encontrado. Contate o administrador do sistema");
+
+        return result.get(0);
+    }
+
     public Login findByUsuario(Usuario usuario) {
         var result = loginRepository.findByUsuario(usuario);
 

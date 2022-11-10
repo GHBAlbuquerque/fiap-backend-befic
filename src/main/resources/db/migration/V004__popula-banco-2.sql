@@ -114,8 +114,9 @@ VALUES (
 
 -- capitulos
 
-INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`numero`, `historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
+1,
 2,
 'Capítulo Único',
 '2022-06-01',
@@ -123,8 +124,9 @@ VALUES (
 'Nada a declarar',
 'Espero que gostem!'
 );
-INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`numero`, `historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
+1,
 3,
 'Capítulo Único',
 '2022-06-01',
@@ -132,8 +134,9 @@ VALUES (
 'Começando de novo...',
 'Demorei demais para postar né?'
 );
-INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`numero`, `historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
+1,
 4,
 'Capítulo Único',
 '2022-06-01',
@@ -141,8 +144,9 @@ VALUES (
 'Mais uma história quentinha!',
 'Deixem comentários <3'
 );
-INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`numero`, `historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
+2,
 4,
 'Capítulo Único',
 '2022-06-01',
@@ -150,8 +154,9 @@ VALUES (
 'Olá pessoa, estou tentando começar novamente.. espero que curtam.',
 'obrigadaaaa'
 );
-INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`numero`, `historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
+1,
 5,
 'Capítulo Único',
 '2022-06-01',
@@ -159,8 +164,9 @@ VALUES (
 'Testando novas formas de escrita',
 'Valeeeeu!'
 );
-INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`numero`, `historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
+2,
 5,
 'Capítulo Único',
 '2022-06-01',
@@ -168,8 +174,9 @@ VALUES (
 'XoXo',
 'XoXo'
 );
-INSERT INTO `db-befic`.capitulo (`historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
+INSERT INTO `db-befic`.capitulo (`numero`, `historia_id`, `titulo`, `dt_publicacao`, `conteudo`, `notas_iniciais`, `notas_finais`)
 VALUES (
+2,
 2,
 'Capítulo Único',
 '2022-06-01',

@@ -42,6 +42,6 @@ create table capitulo (
     notas_iniciais varchar(300) not null,
     notas_finais varchar(300)  not null,
 
-    primary key (numero)
+    primary key (numero, historia_id)
 );
 

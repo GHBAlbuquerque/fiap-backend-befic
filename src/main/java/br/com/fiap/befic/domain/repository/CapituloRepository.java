@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface CapituloRepository extends JpaRepository<Capitulo, Long> {
 
-    public List<Capitulo> findByHistoria(Historia historia);
+    public List<Capitulo> findByHistoriaId(Long historia);
 }
