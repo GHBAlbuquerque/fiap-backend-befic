@@ -2,7 +2,7 @@ package br.com.fiap.befic.domain.service;
 
 import br.com.fiap.befic.domain.exception.BusinessException;
 import br.com.fiap.befic.domain.model.Capitulo;
-import br.com.fiap.befic.domain.model.Historia;
+import br.com.fiap.befic.domain.model.CapituloId;
 import br.com.fiap.befic.domain.repository.CapituloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ public class CapituloService {
         return capituloRepository.findAll();
     }
 
-    public Capitulo findById(Long id) {
+    public Capitulo findById(CapituloId id) {
         return capituloRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Capitulo não encontrado"));
     }
@@ -38,7 +38,9 @@ public class CapituloService {
 
     @Transactional
     public Capitulo save(Capitulo capitulo) {
-        boolean isInUse = capituloRepository.findById(capitulo.getNumero())
+        var capituloId = new CapituloId(capitulo.getNumero(), capitulo.getHistoriaId());
+
+        boolean isInUse = capituloRepository.findById(capituloId)
                 .stream().anyMatch(capituloExistente -> !capituloExistente.equals(capitulo));
 
         if (isInUse) {
@@ -49,23 +51,24 @@ public class CapituloService {
     }
 
     @Transactional
-    public Capitulo update(Long id, Capitulo capitulo) {
-        if (!capituloRepository.existsById(id)) {
+    public Capitulo update(CapituloId capituloId, Capitulo capitulo) {
+        if (!capituloRepository.existsById(capituloId)) {
             ResponseEntity.notFound().build();
         }
 
-        capitulo.setNumero(id);
+        capitulo.setNumero(capituloId.getNumero());
+        capitulo.setHistoriaId(capituloId.getHistoriaId());
         capitulo = capituloRepository.save(capitulo);
 
         return capitulo;
     }
 
-    public boolean existsById(Long id) {
-        return capituloRepository.existsById(id);
+    public boolean existsById(CapituloId capituloId) {
+        return capituloRepository.existsById(capituloId);
     }
 
     @Transactional
-    public void delete(Long id) {
-        capituloRepository.deleteById(id);
+    public void delete(CapituloId capituloId) {
+        capituloRepository.deleteById(capituloId);
     }
 }

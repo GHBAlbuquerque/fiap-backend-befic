@@ -1,6 +1,7 @@
 package br.com.fiap.befic.api.controller;
 
 import br.com.fiap.befic.domain.model.Capitulo;
+import br.com.fiap.befic.domain.model.CapituloId;
 import br.com.fiap.befic.domain.service.CapituloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,9 +23,8 @@ public class CapituloController {
         return capituloService.findAll();
     }
 
-    //TODO: REVER
-    @GetMapping("/{id}")
-    public ResponseEntity<Capitulo> findById(@PathVariable Long id) {
+    @PostMapping("/buscar")
+    public ResponseEntity<Capitulo> findById(@RequestBody CapituloId id) {
         var capitulo = capituloService.findById(id);
 
         return ResponseEntity.ok(capitulo);
@@ -36,14 +36,15 @@ public class CapituloController {
         return capituloService.save(Capitulo);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Capitulo> update(@Valid @PathVariable long id, @RequestBody Capitulo capitulo) {
-        capitulo = capituloService.update(id, capitulo);
+    @PutMapping("/alterar")
+    public ResponseEntity<Capitulo> update(@Valid @RequestBody Capitulo capitulo) {
+        var capituloId = new CapituloId(capitulo.getNumero(), capitulo.getHistoriaId());
+        capitulo = capituloService.update(capituloId, capitulo);
         return ResponseEntity.ok(capitulo);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable long id) {
+    @DeleteMapping("/deletar")
+    public ResponseEntity<Void> delete(@RequestBody CapituloId id)  {
         if (!capituloService.existsById(id)) {
             ResponseEntity.notFound().build();
         }
