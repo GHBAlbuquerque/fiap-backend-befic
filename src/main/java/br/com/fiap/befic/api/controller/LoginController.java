@@ -42,9 +42,9 @@ public class LoginController {
     }
 
 
-    @PostMapping
+    @PostMapping("/criar")
     @ResponseStatus(HttpStatus.CREATED)
-    public Login save(@Valid @RequestBody CreateUsuarioLoginDto createUsuarioLoginDto) {
+    public Login save(@RequestBody CreateUsuarioLoginDto createUsuarioLoginDto) {
         return loginService.save(createUsuarioLoginDto);
     }
 

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -48,25 +49,28 @@ public class LoginService {
 
     @Transactional
     public Login save(CreateUsuarioLoginDto createUsuarioLoginDto) {
-        boolean emailIsInUse = usuarioRepository.findByEmail(createUsuarioLoginDto.getEmail())
+        boolean emailIsNotInUse = usuarioRepository.findByEmail(createUsuarioLoginDto.getEmail())
                 .isEmpty();
 
-        boolean usernameIsInUse = loginRepository.findByUsername(createUsuarioLoginDto.getUsername())
+        boolean usernameIsNotInUse = loginRepository.findByUsername(createUsuarioLoginDto.getUsername())
                 .isEmpty();
 
-        if (!emailIsInUse && !usernameIsInUse)
+        if (!emailIsNotInUse && !usernameIsNotInUse)
             throw new BusinessException("Já existe um usuario cadastrado com esse e-mail e este username");
-        if (!emailIsInUse)
+        if (!emailIsNotInUse)
             throw new BusinessException("Já existe um usuario cadastrado com esse e-mail");
-        if (!usernameIsInUse)
+        if (!usernameIsNotInUse)
             throw new BusinessException("Já existe um usuario cadastrado com esse username");
 
-        GeneroEnum.valueOf(createUsuarioLoginDto.getGenero());
+
+        var dtNasc = LocalDate.of(createUsuarioLoginDto.getAno(),
+                createUsuarioLoginDto.getMes(),
+                createUsuarioLoginDto.getDia());
 
         var usuario = new Usuario(
                 null,
                 createUsuarioLoginDto.getNome(),
-                createUsuarioLoginDto.getDtNasc(),
+                dtNasc,
                 createUsuarioLoginDto.getCelular(),
                 createUsuarioLoginDto.getEmail(),
                 GeneroEnum.valueOf(createUsuarioLoginDto.getGenero()),

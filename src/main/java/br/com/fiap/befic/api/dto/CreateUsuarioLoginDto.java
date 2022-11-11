@@ -23,7 +23,13 @@ public class CreateUsuarioLoginDto {
     private String nome;
 
     @NotNull
-    private LocalDate dtNasc;
+    private Integer ano;
+
+    @NotNull
+    private Integer mes;
+
+    @NotNull
+    private Integer dia;
 
     @NotNull
     private String celular;
