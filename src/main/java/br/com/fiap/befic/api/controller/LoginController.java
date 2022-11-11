@@ -1,5 +1,6 @@
 package br.com.fiap.befic.api.controller;
 
+import br.com.fiap.befic.api.dto.CreateUsuarioLoginDto;
 import br.com.fiap.befic.api.dto.LoginDto;
 import br.com.fiap.befic.domain.model.Login;
 import br.com.fiap.befic.domain.model.Usuario;
@@ -43,8 +44,8 @@ public class LoginController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Login save(@Valid @RequestBody Login Login) {
-        return loginService.save(Login);
+    public Login save(@Valid @RequestBody CreateUsuarioLoginDto createUsuarioLoginDto) {
+        return loginService.save(createUsuarioLoginDto);
     }
 
     @PutMapping("/{id}")

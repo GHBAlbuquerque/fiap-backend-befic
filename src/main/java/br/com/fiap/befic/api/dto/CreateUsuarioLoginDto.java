@@ -5,25 +5,33 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Getter
 @Setter
 @Accessors(chain = true)
-public class UsuarioDto {
+public class CreateUsuarioLoginDto {
 
-    private Long id;
+    @NotNull
+    private String username;
 
+    @NotNull
+    private String senha;
+
+    @NotNull
     private String nome;
 
-    private LocalDate dt_nasc;
+    @NotNull
+    private LocalDate dtNasc;
 
+    @NotNull
     private String celular;
 
+    @NotNull
     private String email;
 
-    private GeneroEnum genero;
-
-    private String perfil;
+    @NotNull
+    private String genero;
 
 }

@@ -5,7 +5,7 @@ create table usuario (
     celular varchar(20),
     email varchar(255) not null,
     genero varchar(50) not null,
-    perfil varchar(500) not null,
+    perfil varchar(500),
     dt_cadastro date not null,
     
     primary key (id)

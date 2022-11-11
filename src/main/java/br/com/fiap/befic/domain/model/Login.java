@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ public class Login {
     @EqualsAndHashCode.Include
     private Long id;
 
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     @OneToOne
     @JoinColumn(nullable = false)
     private Usuario usuario;
