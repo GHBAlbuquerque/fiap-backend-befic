@@ -45,10 +45,12 @@ public class CapituloService {
                 .stream().anyMatch(capituloExistente -> !capituloExistente.equals(capitulo));
 
         if (isInUse) {
-            throw new BusinessException("Já existe uma capitulo cadastrado com este número");
+            throw new BusinessException("Já existe um capitulo cadastrado com este número");
         }
 
-        return capituloRepository.save(capitulo);
+        capitulo.setNumero(capituloNumero);
+        var entity = capituloRepository.save(capitulo);
+        return entity;
     }
 
     @Transactional
