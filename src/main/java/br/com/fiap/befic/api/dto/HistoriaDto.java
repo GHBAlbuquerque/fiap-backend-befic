@@ -4,22 +4,20 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import java.time.LocalDate;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
 @Accessors(chain = true)
 public class HistoriaDto {
-    private Long id;
 
+    @NotNull
     private Long autor;
 
+    @NotNull
     private String nome;
 
-    private LocalDate dt_publicacao;
-
-    private LocalDate dt_atualizacao;
-
+    @NotNull
     private String sinopse;
 
 }

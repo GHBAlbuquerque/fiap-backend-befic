@@ -20,7 +20,6 @@ import java.time.LocalDate;
 public class Capitulo implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @EqualsAndHashCode.Include
     private Long numero;
 

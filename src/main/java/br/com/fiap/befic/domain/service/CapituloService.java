@@ -38,7 +38,8 @@ public class CapituloService {
 
     @Transactional
     public Capitulo save(Capitulo capitulo) {
-        var capituloId = new CapituloId(capitulo.getNumero(), capitulo.getHistoriaId());
+        var capituloNumero = capituloRepository.countByHistoriaId(capitulo.getHistoriaId()) + 1;
+        var capituloId = new CapituloId(capituloNumero, capitulo.getHistoriaId());
 
         boolean isInUse = capituloRepository.findById(capituloId)
                 .stream().anyMatch(capituloExistente -> !capituloExistente.equals(capitulo));

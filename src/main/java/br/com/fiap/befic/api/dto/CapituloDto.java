@@ -1,27 +1,23 @@
 package br.com.fiap.befic.api.dto;
 
-import br.com.fiap.befic.domain.model.Historia;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import java.time.LocalDate;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
 @Accessors(chain = true)
 public class CapituloDto {
 
-    private Long numero;
+    @NotNull
+    private Long historiaId;
 
-    private Long historia;
-
+    @NotNull
     private String titulo;
 
-    private LocalDate dt_publicacao;
-
-    private LocalDate dt_atualizacao;
-
+    @NotNull
     private String conteudo;
 
     private String notasIniciais;

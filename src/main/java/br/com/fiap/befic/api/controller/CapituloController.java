@@ -1,8 +1,10 @@
 package br.com.fiap.befic.api.controller;
 
+import br.com.fiap.befic.api.dto.CapituloDto;
 import br.com.fiap.befic.domain.model.Capitulo;
 import br.com.fiap.befic.domain.model.CapituloId;
 import br.com.fiap.befic.domain.service.CapituloService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,8 +34,12 @@ public class CapituloController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Capitulo save(@Valid @RequestBody Capitulo Capitulo) {
-        return capituloService.save(Capitulo);
+    public Capitulo save(@Valid @RequestBody CapituloDto capituloDto) {
+        var capitulo = new Capitulo();
+        BeanUtils.copyProperties(capituloDto, capitulo);
+
+        capitulo = capituloService.save(capitulo);
+        return capitulo;
     }
 
     @PutMapping("/alterar")
@@ -44,7 +50,7 @@ public class CapituloController {
     }
 
     @DeleteMapping("/deletar")
-    public ResponseEntity<Void> delete(@RequestBody CapituloId id)  {
+    public ResponseEntity<Void> delete(@RequestBody CapituloId id) {
         if (!capituloService.existsById(id)) {
             ResponseEntity.notFound().build();
         }

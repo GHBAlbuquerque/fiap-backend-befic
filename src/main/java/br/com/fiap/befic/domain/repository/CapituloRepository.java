@@ -10,4 +10,6 @@ import java.util.List;
 public interface CapituloRepository extends JpaRepository<Capitulo, CapituloId> {
 
     public List<Capitulo> findByHistoriaId(Long historia);
+
+    Long countByHistoriaId(Long historia);
 }
