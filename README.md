@@ -1,8 +1,6 @@
-# fiap-backend0befic
+# fiap-backend-befic
 
 Backend feito para o app Android BeFic criado no curso de Análise e Desenvolvimento de Sistemas da FIAP.
-
-[Versão em Português](https://github.com/GHBAlbuquerque/algaworks-algafood-api/blob/main/README-PT.md)
 
 ## Tecnologias
 
