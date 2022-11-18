@@ -12,4 +12,6 @@ public interface CapituloRepository extends JpaRepository<Capitulo, CapituloId> 
     public List<Capitulo> findByHistoriaId(Long historia);
 
     Long countByHistoriaId(Long historia);
+
+    public void deleteAllByHistoriaId(Long historia);
 }

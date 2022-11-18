@@ -49,7 +49,7 @@ public class CapituloController {
         return ResponseEntity.ok(capitulo);
     }
 
-    @DeleteMapping("/deletar")
+    @PostMapping("/deletar")
     public ResponseEntity<Void> delete(@RequestBody CapituloId id) {
         if (!capituloService.existsById(id)) {
             ResponseEntity.notFound().build();

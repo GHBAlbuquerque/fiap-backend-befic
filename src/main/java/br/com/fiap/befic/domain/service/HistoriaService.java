@@ -3,6 +3,7 @@ package br.com.fiap.befic.domain.service;
 import br.com.fiap.befic.domain.exception.BusinessException;
 import br.com.fiap.befic.domain.model.Historia;
 import br.com.fiap.befic.domain.model.Usuario;
+import br.com.fiap.befic.domain.repository.CapituloRepository;
 import br.com.fiap.befic.domain.repository.HistoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,9 @@ public class HistoriaService {
 
     @Autowired
     private HistoriaRepository historiaRepository;
+
+    @Autowired
+    private CapituloRepository capituloRepository;
 
     public List<Historia> findAll() {
         return historiaRepository.findAll();
@@ -68,6 +72,7 @@ public class HistoriaService {
 
     @Transactional
     public void delete(Long id) {
+        capituloRepository.deleteAllByHistoriaId(id);
         historiaRepository.deleteById(id);
     }
 }
